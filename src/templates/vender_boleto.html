@@ -1,0 +1,60 @@
+{% extends "nav_bar.html" %}
+
+{% block search_user %}
+<div class="container-lg">
+    <form class="input" action="{{ url_for('realizar_compra') }}" method="POST">
+         <!-- FECHA DE COMPRA -->
+        <label class="form-label">Fecha de compra</label>
+        <input class="form-control active" type="text" name="fecha_de_compra" value="{{fecha}}" readonly>
+
+        <!-- DATOS CLIENTE -->
+        <label class="form-label">Datos cliente</label>
+        <input class="form-control active" type="text" name="datos_cliente" value="{{ res[2] + " " + res[4] }}" readonly>
+
+        <!-- DATOS VENDEDOR -->
+        <label class="form-label">Datos vendedor</label>
+        <input class="form-control active" type="text" name="datos_vendedor" value="{{ data_user_log[2] + ' ' + data_user_log[4] if data_user_log else '' }}" readonly>
+
+        <!-- METODO DE PAGO-->
+        <label class="form-label">Metodo de pago</label>
+        <select class="form-select" aria-label="Default select example" id="opciones_pago" onchange="formaPago()">
+            <option selected onchange="">Seleciona una opción</option>
+        {% for metodo_pago in metodo_pago %}
+            <option value="{{metodo_pago[0]}}">{{metodo_pago[1]}}</option>
+        {% endfor %}
+        </select>
+        <input class="form-control displey-none" type="text" name="metodo_pago" value="" readonly id="tp">
+
+        <!-- TIPO DE ENTRADA -->
+        <label class="form-label">Tipo de entrada</label>
+        <select class="form-select" aria-label="Default select example" id="tipo_entrada" onchange="v_tipo_entrada()">
+            <option selected onchange="">Seleciona una opción</option>
+        {% for tipo_entrada in tipo_entrada %}
+              <option value="{{tipo_entrada[0]}}">{{tipo_entrada[1]}}</option>
+        {% endfor %}
+        </select>
+        <input class="form-control displey-none" type="text" name="tipo_entrada" value="" readonly id="tb">
+
+        <!-- BTN VALIDAR -->
+        <input type="submit" value="Comprar" class="btn btn-outline-success">
+    </form>
+</div>
+<script>
+    function formaPago() {
+        var listaformaPago = document.getElementById("opciones_pago");
+        var opcionSeleccionadaformaPago = listaformaPago.value;
+
+        var campoSeleccionadoformaPago = document.getElementById("tp");
+        campoSeleccionadoformaPago.value = opcionSeleccionadaformaPago;
+        }
+    function v_tipo_entrada() {
+        var listaDesplegable1 = document.getElementById("tipo_entrada");
+        var opcionSeleccionada1 = listaDesplegable1.value;
+
+        var campoSeleccionado1 = document.getElementById("tb");
+        campoSeleccionado1.value = opcionSeleccionada1;
+        }
+</script>
+{% endblock %}
+
+

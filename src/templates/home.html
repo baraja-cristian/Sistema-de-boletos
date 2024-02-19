@@ -1,0 +1,53 @@
+{% extends "nav_bar.html" %}
+
+{% block title%}
+    <title>Home</title>
+{% endblock %}
+
+{% block card %}
+    {% with messages = get_flashed_messages()%}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container-md alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+<div class="container-bf">
+    <div class="card-boleto">
+        <h1>Vender boleto y Boletos vendidos</h1>
+        <h2>Selecione el tipo de boleto</h2>
+        <div class="card_info">
+            <ul class="card-list">
+                <li class="card1 card-list-op"><a class="btn-acc1" href="{{url_for('compra')}}" >Interno</a></li>
+                <li class="card1 card-list-op"><a class="btn-acc1" href="" >Externo</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-boleto">        
+        <h1>Administar</h1>
+        <h2>Administrar boletos vendidos</h2>
+        <div class="card_info">
+            <ul class="card-list">
+                <li class="card1 card-list-op"><a class="btn-acc1" href="" >Observar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-boleto">
+        <h1>Roles de cuenta</h1>
+        <h2>Agregar un nuevo SubAdmin</h2>
+        <div class="card_info">
+            <ul class="card-list">
+                <li class="card1 card-list-op"><a class="btn-acc1" href="{{url_for('roles')}}" >Observar</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

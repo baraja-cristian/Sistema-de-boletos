@@ -1,0 +1,50 @@
+{% extends "nav_bar.html" %}
+
+{% block title%}
+    <title>Roles</title>
+{% endblock %}
+
+{%block roles_page%}
+<div class="container-sm">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+  <form class="d-flex" action="{{url_for('buscarUser')}}" method="POST">
+    <input class="form-control me-2" name="buscar" type="text" placeholder="Ingresa la cedula para buscar un usuario" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</div>
+
+
+<div class="container-sm">
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Cédula</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for res_datos_usuarios in res_datos_usuarios%}
+        <tr>
+            <td>{{res_datos_usuarios[2]}} {{res_datos_usuarios[3]}}</td>
+            <td>{{res_datos_usuarios[4]}} {{res_datos_usuarios[5]}}</td>
+            <td>{{res_datos_usuarios[6]}} </td>
+            <td>{{res_datos_usuarios[1]}} </td>
+         </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+ </div>
+{%endblock%}

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1F2024;
+}
+.navbar{
+    background-color: white;
+    padding: 20px;
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.bi{
+    font-size: 20px;
+}
+
+.bi-patch-check-fill{
+    color: #103778;
+}
+
+
+.col-6{
+    background-color: white;
+    width: 50%;
+}
+
+
+.container-bf{
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+div.card-boleto{
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 20%;
+    height: auto;
+    background-color: #D9D9D9;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid #61727C;
+}
+
+div.card-boleto h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+div.card-boleto h2{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    color: black;
+}
+
+div.card-boleto .card_info{
+    margin: auto;
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    background-color: #E4F2E7;
+    border-radius: 20px;
+}
+
+
+div.card-boleto .card_info ul{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    list-style: none;
+}
+
+div.card-boleto .card_info .card-list-op{
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #04D939;
+}
+
+div.card-boleto .card_info .card-list-op .btn-acc1{
+    text-decoration: none;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1226px){
+    .container-bf{
+        width: 90%;
+    }
+    div.card-boleto{
+        width: 30%;
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 720px){
+    .container-bf{
+        width: 100%;
+    }
+    div.card-boleto{
+        margin: auto;
+        margin-bottom: 20px;
+        width: 80%;
+    }
+    
+}

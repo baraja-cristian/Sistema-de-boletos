@@ -1,0 +1,40 @@
+{% extends "nav_bar.html" %}
+
+{% block title%}
+    <title>Editar usuario</title>
+{% endblock %}
+
+{%block rol_edit%}
+
+<div class="container-md">
+    <form action="{{ url_for('actualizar', id=data_edit_user[0]) }}" method="POST">
+        <div class="mb-3">
+            <label class="form-label">1- Cédula</label>
+            <input type="text" name="cedula" class="form-control" value="{{data_edit_user[1]}}">
+
+            <label class="form-label">2- Primer nombre</label>
+            <input type="text" name="nombre1" class="form-control" value="{{data_edit_user[2]}}">
+
+            <label class="form-label">3- Segundo nombre</label>
+            <input type="text" name="nombre2" class="form-control" value="{{data_edit_user[3]}}">
+
+            <label class="form-label">4- Primer apellido</label>
+            <input type="text" name="apellido1" class="form-control" value="{{data_edit_user[4]}}">
+
+            <label class="form-label">5- Segundo apellido</label>
+            <input type="text" name="apellido2" class="form-control" value="{{data_edit_user[5]}}">
+
+            <label class="form-label">6- Email</label>
+            <input type="text" name="email" class="form-control" value="{{data_edit_user[6]}}">
+
+            <label class="form-label">Password</label>
+            <input type="text" name="password" class="form-control" value="{{data_edit_user[7]}}">
+
+            <label class="form-label">Rol</label>
+            <input type="text" name="rol" class="form-control" aria-describedby="emailHelp" value="{{data_edit_user[8]}}">
+        </div>
+        <button type="submit" class="btn btn-primary ">Guardar</button>
+      </form>
+<div/>
+
+{% endblock %}

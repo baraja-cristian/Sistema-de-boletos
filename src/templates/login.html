@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+    {% with messages = get_flashed_messages()%}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+<img src="https://i.ibb.co/Q6016By/logo.png" alt="logo" border="0" width="100", height="100">
+
+<form action="/login" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Ingresa tu usuasio</label>
+      <input type="text" class="form-control" name="user" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Ingresa tu contraseña</label>
+      <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+{% endblock %}

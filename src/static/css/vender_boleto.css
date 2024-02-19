@@ -1,0 +1,62 @@
+/*CSS de comprar*/
+.bucar_compra{
+    width: 50%;
+}
+
+.bucar_compra h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.input_buscar{
+    width: 100%;
+}
+
+/*CSS de vender boleto*/
+div.container-lg{
+    width: 30%;
+    background: white;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #61727C;
+}
+
+.input{
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.displey-none{
+    display: none;
+}
+.form-select{
+    margin-bottom: 10px;
+}
+.btn-outline-success{
+    width: 100%;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 720px){
+    /*CSS de vender boleto*/
+    div.container-lg{
+    width: 90%;
+    background: white;
+    margin-top: 100px;
+    padding: 20px; }
+
+    /*CSS de comprar*/
+    .bucar_compra{
+    width: 90%;
+    }
+    .bucar_compra h1{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+    }
+
+}

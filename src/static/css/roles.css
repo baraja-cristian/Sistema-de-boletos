@@ -1,0 +1,30 @@
+.container-sm{
+    margin-top: 50px;
+}
+
+
+.d-flex{
+    margin: auto;
+    width: 50%;
+}
+
+
+.container-md{
+    margin-top: 50px;
+    width: 30%;
+    background-color: #265C4B;
+    padding: 20px;
+    color: white;
+}
+
+
+@media only screen and (max-width: 720px){
+    .d-flex{
+        margin: auto;
+        width: 100%;
+    }
+    .container-md{
+        width: 90%;
+    }
+
+}
