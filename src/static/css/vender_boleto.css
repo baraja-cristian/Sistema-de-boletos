@@ -12,6 +12,17 @@
     width: 100%;
 }
 
+i.icon-bo{
+    font-size: 25px;
+    color: #03A64A;
+}
+
+div.div-boleto{
+    width: 50%;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid black;
+}
 /*CSS de vender boleto*/
 div.container-lg{
     width: 30%;

@@ -78,9 +78,12 @@ def roles():
 
             cursor = mysql.connection.cursor()
             cursor.execute("""
-                           SELECT Usuario.ID_estudiante, Usuario.Usuario_cedula, Usuario.Usuario_nombre1, Usuario.Usuario_nombre2,  Usuario.Usuario_apellido1, Usuario_apellido2, Rol_usuario.Tipo_rol
+                           SELECT Usuario.ID_estudiante, Usuario.Usuario_cedula, Usuario.Usuario_nombre1,
+                           Usuario.Usuario_nombre2,  Usuario.Usuario_apellido1, Usuario_apellido2, Rol_usuario.Tipo_rol
                            FROM Usuario 
-                           INNER JOIN Rol_usuario ON Rol_usuario.ID_rol_usuario = Usuario.Usuario_ID_rol""")
+                           INNER JOIN Rol_usuario ON Rol_usuario.ID_rol_usuario = Usuario.Usuario_ID_rol
+                           WHERE Usuario.Usuario_ID_rol = '4' OR Usuario.Usuario_ID_rol = '3'
+                           """)
 
             res_datos_usuarios = cursor.fetchall()
             cursor.close()
@@ -232,7 +235,9 @@ def realizar_compra():
             id_generado = numero_aleatorio + "-" + letras_aleatorias
 
             cursor_comprar_boleto = mysql.connection.cursor()
-            cursor_comprar_boleto.execute('INSERT INTO Compra_boleto(ID_compra_boleto, Fecha_boleto, Usuario_ID_cliente, Usuario_ID_vendedor, Metodo_ID_pago) VALUES (%s, %s, %s, %s, %s)', (id_generado, fecha_de_compra, datos_cliente, datos_vendedor, metodo_pago))
+            cursor_comprar_boleto.execute("""
+            INSERT INTO Compra_boleto(ID_compra_boleto, Fecha_boleto, Usuario_ID_cliente, Usuario_ID_vendedor, Metodo_ID_pago) 
+            VALUES (%s, %s, %s, %s, %s)""",(id_generado, fecha_de_compra, datos_cliente, datos_vendedor, metodo_pago))
             mysql.connection.commit()
             cursor_comprar_boleto.close()
 

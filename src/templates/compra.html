@@ -5,25 +5,25 @@
 {% endblock %}
 
 {% block search_user %}
-    <div class="container-lg bucar_compra">
-        <h1>Ingresa la cedula para realizar una nueva venta</h1>
-        <form class="d-flex input_buscar" action="{{ url_for('buscar_datos_compra') }}" method="POST">
-            <input class="form-control me-2" name="buscar" type="text" placeholder="Ingresa la cedula para buscar un usuario" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
 
-    </div>
-
-<div class="container-lg">
+<div class="div-boleto container-lg bucar_compra">
+    <h1>Ingresa la cedula para realizar una nueva venta</h1>
+    <br>
+    <form class="d-flex input_buscar" action="{{ url_for('buscar_datos_compra') }}" method="POST">
+        <input class="form-control me-2" name="buscar" type="text" placeholder="Ingresa la cedula para buscar un usuario" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <br>
     <div class=" table-responsive">
       <table class="table">
+
           <thead>
           <tr>
 
-              <th scope="col"><i class="bi bi-bag-dash-fill"></i></th>
-              <th scope="col"><i class="bi bi-people-fill"></i></th>
-              <th scope="col"><i class="bi bi-calendar2-date-fill"></i></th>
-              <th scope="col"><i class="bi bi-ticket-detailed-fill"></i></th>
+              <th scope="col"><i class="bi bi-bag-dash-fill icon-bo"></i></th>
+              <th scope="col"><i class="bi bi-people-fill icon-bo"></i></th>
+              <th scope="col"><i class="bi bi-calendar2-date-fill icon-bo"></i></th>
+              <th scope="col"><i class="bi bi-ticket-detailed-fill icon-bo"></i></th>
 
           </tr>
           </thead>
